@@ -17,8 +17,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       // Map site ID to folder name
       const siteFolderMap: { [key: string]: string } = {
-        '8471936c-3bb6-48d4-81e1-3791fc089938': 'buykit-fixed',
-        '8d38af38-c39a-4c5d-9a0a-72ef18f75129': 'natalie-photography'
+        '8471936c-3bb6-48d4-81e1-3791fc089938': 'buyit',
+        '8d38af38-c39a-4c5d-9a0a-72ef18f75129': 'jane-photography'
       };
 
       const siteFolder = siteFolderMap[siteId as string];
@@ -91,8 +91,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
       // Get deployment status and site info
       const siteFolderMap: { [key: string]: string } = {
-        '8471936c-3bb6-48d4-81e1-3791fc089938': 'buykit-fixed',
-        '8d38af38-c39a-4c5d-9a0a-72ef18f75129': 'natalie-photography'
+        '8471936c-3bb6-48d4-81e1-3791fc089938': 'buyit',
+        '8d38af38-c39a-4c5d-9a0a-72ef18f75129': 'jane-photography'
       };
 
       const siteFolder = siteFolderMap[siteId as string];

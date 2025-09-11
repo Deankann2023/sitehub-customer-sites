@@ -11,8 +11,8 @@ This repository hosts all customer websites with automated deployment via GitHub
 - Custom domain support for each site
 
 ### **Current Sites**
-- **Buyk It Fixed** (`/sites/buykit-fixed/`) - Bicycle repair services
-- **Natalie Photography** (`/sites/natalie-photography/`) - Professional photography
+- **BuyIt** (`/sites/buyit/`) - Bicycle repair services
+- **Jane Photography** (`/sites/jane-photography/`) - Professional photography
 
 ## 🔄 **Deployment Workflow**
 
