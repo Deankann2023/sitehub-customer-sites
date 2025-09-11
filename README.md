@@ -23,7 +23,7 @@ This repository hosts all customer websites with automated deployment via GitHub
 4. Custom domains point to GitHub Pages (if configured)
 
 ### **Site URLs**
-- **Development**: `https://dean-sitehub.github.io/dean-sitehub/sites/[site-name]/`
+- **Development**: `https://deankann2023.github.io/sitehub-customer-sites/sites/[site-name]/`
 - **Production**: Custom domains (configured via DNS)
 
 ## 🛠️ **Development Process**

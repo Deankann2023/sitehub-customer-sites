@@ -5,8 +5,8 @@ const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN, // You'll need to add this to your environment variables
 });
 
-const GITHUB_OWNER = 'dean-sitehub';
-const GITHUB_REPO = 'dean-sitehub';
+const GITHUB_OWNER = 'Deankann2023';
+const GITHUB_REPO = 'sitehub-customer-sites';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { siteId } = req.query;
