@@ -1,0 +1,188 @@
+name: Multi-Site Deployment
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'sites/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'sites/**'
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      sites: ${{ steps.changes.outputs.sites }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      
+      - name: Detect changed sites
+        id: changes
+        run: |
+          # Get list of changed files
+          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD)
+          echo "Changed files: $CHANGED_FILES"
+          
+          # Extract unique site directories
+          CHANGED_SITES=$(echo "$CHANGED_FILES" | grep '^sites/' | cut -d'/' -f2 | sort -u | tr '\n' ' ')
+          echo "Changed sites: $CHANGED_SITES"
+          
+          # Convert to JSON array for matrix strategy
+          SITES_JSON=$(echo "$CHANGED_SITES" | tr ' ' '\n' | grep -v '^$' | jq -R -s -c 'split("\n")[:-1]')
+          echo "sites=$SITES_JSON" >> $GITHUB_OUTPUT
+
+  deploy-sites:
+    needs: detect-changes
+    if: needs.detect-changes.outputs.sites != '[]' && needs.detect-changes.outputs.sites != ''
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        site: ${{ fromJson(needs.detect-changes.outputs.sites) }}
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Validate site directory
+        run: |
+          if [ ! -d "sites/${{ matrix.site }}" ]; then
+            echo "Site directory sites/${{ matrix.site }} does not exist"
+            exit 1
+          fi
+          
+          if [ ! -f "sites/${{ matrix.site }}/index.html" ]; then
+            echo "No index.html found in sites/${{ matrix.site }}"
+            exit 1
+          fi
+      
+      - name: Optimize images
+        run: |
+          cd sites/${{ matrix.site }}
+          
+          # Install imagemin if assets/images exist
+          if [ -d "assets/images" ]; then
+            npm init -y
+            npm install imagemin imagemin-mozjpeg imagemin-pngquant --save-dev
+            
+            # Create image optimization script
+            cat > optimize-images.js << 'EOF'
+          const imagemin = require('imagemin');
+          const imageminMozjpeg = require('imagemin-mozjpeg');
+          const imageminPngquant = require('imagemin-pngquant');
+          
+          (async () => {
+            const files = await imagemin(['assets/images/**/*.{jpg,png}'], {
+              destination: 'assets/images/',
+              plugins: [
+                imageminMozjpeg({quality: 80}),
+                imageminPngquant({quality: [0.6, 0.8]})
+              ]
+            });
+            
+            console.log('Optimized images:', files.length);
+          })();
+          EOF
+            
+            # Run optimization
+            node optimize-images.js || echo "Image optimization skipped"
+          fi
+      
+      - name: Minify CSS and JS
+        run: |
+          cd sites/${{ matrix.site }}
+          
+          # Minify CSS files
+          if [ -d "assets/css" ]; then
+            find assets/css -name "*.css" -not -name "*.min.css" -exec sh -c '
+              echo "/* Minified CSS for production */" > "${1%.css}.min.css"
+              cat "$1" | tr -d "\n\t" | sed "s/  */ /g" >> "${1%.css}.min.css"
+            ' _ {} \;
+          fi
+          
+          # Update HTML to use minified files
+          if [ -f "index.html" ]; then
+            sed -i 's/\.css"/.min.css"/g' index.html || true
+          fi
+      
+      - name: Generate sitemap
+        run: |
+          cd sites/${{ matrix.site }}
+          
+          # Create sitemap.xml
+          cat > sitemap.xml << EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <url>
+              <loc>https://dean-sitehub.github.io/dean-sitehub/sites/${{ matrix.site }}/</loc>
+              <lastmod>$(date +%Y-%m-%d)</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>1.0</priority>
+            </url>
+          </urlset>
+          EOF
+          
+          # Create robots.txt
+          cat > robots.txt << EOF
+          User-agent: *
+          Allow: /
+          
+          Sitemap: https://dean-sitehub.github.io/dean-sitehub/sites/${{ matrix.site }}/sitemap.xml
+          EOF
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: sites/${{ matrix.site }}
+          destination_dir: sites/${{ matrix.site }}
+          user_name: 'GitHub Actions'
+          user_email: 'actions@github.com'
+          commit_message: 'Deploy ${{ matrix.site }} - ${{ github.event.head_commit.message }}'
+      
+      - name: Comment deployment status
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `🚀 **Site Deployed**: ${{ matrix.site }}
+              
+              **Preview URL**: https://dean-sitehub.github.io/dean-sitehub/sites/${{ matrix.site }}/
+              
+              **Changes**: ${{ github.event.head_commit.message }}
+              **Commit**: ${{ github.sha }}
+              **Status**: ✅ Deployed successfully`
+            })
+
+  lighthouse-audit:
+    needs: [detect-changes, deploy-sites]
+    if: needs.detect-changes.outputs.sites != '[]' && needs.detect-changes.outputs.sites != ''
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        site: ${{ fromJson(needs.detect-changes.outputs.sites) }}
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Wait for deployment
+        run: sleep 60
+      
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          urls: |
+            https://dean-sitehub.github.io/dean-sitehub/sites/${{ matrix.site }}/
+          uploadArtifacts: true
+          temporaryPublicStorage: true

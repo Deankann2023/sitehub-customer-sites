@@ -1,0 +1,114 @@
+name: Site Health Check
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        site: [buykit-fixed, natalie-photography]
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Check site availability
+        id: check
+        run: |
+          URL="https://dean-sitehub.github.io/dean-sitehub/sites/${{ matrix.site }}/"
+          
+          echo "Checking $URL"
+          
+          # Check if site responds with 200
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
+          
+          if [ "$STATUS" = "200" ]; then
+            echo "✅ Site is healthy: ${{ matrix.site }}"
+            echo "status=healthy" >> $GITHUB_OUTPUT
+          else
+            echo "❌ Site is down: ${{ matrix.site }} (HTTP $STATUS)"
+            echo "status=down" >> $GITHUB_OUTPUT
+            echo "http_code=$STATUS" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Check page load time
+        if: steps.check.outputs.status == 'healthy'
+        run: |
+          URL="https://dean-sitehub.github.io/dean-sitehub/sites/${{ matrix.site }}/"
+          
+          # Measure page load time
+          TIME=$(curl -o /dev/null -s -w "%{time_total}" "$URL")
+          
+          echo "⏱️ Load time for ${{ matrix.site }}: ${TIME}s"
+          
+          # Alert if load time is too slow (>5 seconds)
+          if (( $(echo "$TIME > 5" | bc -l) )); then
+            echo "⚠️ Slow load time detected: ${TIME}s"
+          fi
+      
+      - name: Create issue if site is down
+        if: steps.check.outputs.status == 'down'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `🚨 Site Down: ${{ matrix.site }}`;
+            const body = `## Site Health Check Failed
+            
+            **Site**: ${{ matrix.site }}
+            **URL**: https://dean-sitehub.github.io/dean-sitehub/sites/${{ matrix.site }}/
+            **HTTP Status**: ${{ steps.check.outputs.http_code }}
+            **Check Time**: ${new Date().toISOString()}
+            
+            Please investigate and resolve the issue.
+            
+            ### Possible Causes:
+            - Deployment failure
+            - GitHub Pages configuration issue
+            - DNS/domain configuration problem
+            - File corruption or missing files
+            
+            ---
+            *This issue was automatically created by the site health check workflow.*`;
+            
+            // Check if similar issue already exists
+            const existingIssues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'site-down'
+            });
+            
+            const siteDownIssue = existingIssues.data.find(issue => 
+              issue.title.includes('${{ matrix.site }}')
+            );
+            
+            if (!siteDownIssue) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                labels: ['site-down', 'urgent', '${{ matrix.site }}']
+              });
+            }
+
+  summary:
+    needs: health-check
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+      - name: Create summary
+        run: |
+          echo "## 🏥 Site Health Check Summary" >> $GITHUB_STEP_SUMMARY
+          echo "**Check Time**: $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Site | Status | URL |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|--------|-----|" >> $GITHUB_STEP_SUMMARY
+          echo "| buykit-fixed | ⏳ Check logs | [Visit](https://dean-sitehub.github.io/dean-sitehub/sites/buykit-fixed/) |" >> $GITHUB_STEP_SUMMARY
+          echo "| natalie-photography | ⏳ Check logs | [Visit](https://dean-sitehub.github.io/dean-sitehub/sites/natalie-photography/) |" >> $GITHUB_STEP_SUMMARY
