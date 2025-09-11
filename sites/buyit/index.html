@@ -3,308 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy It</title>
-    <meta name="description" content="Buy It - Your trusted partner for professional bicycle repair services. Located in Glenhazel.">
-    <meta name="keywords" content="Buy It, bicycle repair, Glenhazel, bike service, bike maintenance, bike shop">
-    <link rel="stylesheet" href="style.css">
+    <title>BuyIt - Bicycle Repair Services</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        h1 { 
+            text-align: center; 
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .update-info {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .cta {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto;
+            transition: transform 0.3s;
+        }
+        .cta:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
-
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo-link">
-                <img src="/sites/BuykItFixed/logo.png" alt="Buy It" class="logo">
-            </a>
-            <ul class="nav-links">
-                
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="hamburger" onclick="toggleNav()">☰</button>
+    <div class="container">
+        <h1>🚴‍♂️ BuyIt</h1>
+        <div class="subtitle">Professional Bicycle Repair Services</div>
+        
+        <div class="update-info">
+            <h3>🎉 GitHub Deployment Test Successful!</h3>
+            <p>Last updated via SiteHub Editor: <strong>2025-09-11T10:35:52.612Z</strong></p>
+            <p>This page was automatically deployed to GitHub Pages!</p>
         </div>
-    </nav>
 
-    <section id="hero" class="hero-section" style="background-image: url('hero-dalle-1757428018607.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-color: #1a1a1a; padding: 80px 20px; text-align: center;">
-        <div class="hero-content container">
-            <h1>Buy It</h1>
-            <p>Your trusted partner for professional bicycle repair services.</p>
-            <a href="#contact-form" class="btn btn-primary">Get a Repair Quote</a>
-        </div>
-    </section>
+        <h2>Our Services</h2>
+        <ul>
+            <li>🔧 Bicycle repairs and maintenance</li>
+            <li>🛠️ Custom bike builds</li>
+            <li>⚙️ Performance tuning</li>
+            <li>🚲 Bike fitting services</li>
+        </ul>
 
-    <section class="text-section" style="background-color: transparent; padding: 60px 20px;">
-        <div class="container">
-            <h2>We are the experts</h2>
-            <div class="text-content">
-                <p>Our ExpertiseAt our bike repair shop, we pride ourselves on providing top-notch service to all bike owners. As avid cyclists ourselves, we understand what you need and expect when it comes to maintaining and repairing your two-wheeled companions.</p>
-                <p>We bring to you a deep understanding of the mechanics of various types of bikes, from road racers to mountain climbers. With us, your bike is in safe hands.</p>
-                <p>It's simple: we love bikes as much as you do. We handle each bike with the care and attention it deserves. Our team is skilled, experienced, and dedicated to ensuring your bike is in the best condition possible.</p>
-                <p>We are committed to providing you with a service that's not just good but great. Here's what we guarantee:</p>
-                <p>Ready for a bike repair service like no other? Give us a call today!</p>
-            </div>
-        </div>
-    </section>
+        <button class="cta">Book Your Repair Today!</button>
 
-    <section id="services" class="services-section" style="background-color: #f8fafc; padding: 60px 20px;">
-        <div class="container">
-            <h2>Our Services</h2>
-            <p class="section-description">We offer a comprehensive range of bicycle repair and maintenance services to meet all your needs, ensuring your ride is always at its best.</p>
-            <div class="service-grid">
-                
-                <div class="service-item">
-                    <div class="service-icon">⭐</div>
-                    <h3>Service</h3>
-                    <p></p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">⭐</div>
-                    <h3>Service</h3>
-                    <p></p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">⭐</div>
-                    <h3>Service</h3>
-                    <p></p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">⭐</div>
-                    <h3>Service</h3>
-                    <p></p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">⭐</div>
-                    <h3>Service</h3>
-                    <p></p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">⭐</div>
-                    <h3>Service</h3>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section" style="background-color: #ffffff; padding: 60px 20px;">
-        <div class="container">
-            <h2>Get a Repair Quote or Ask a Question</h2>
-            <div class="contact-form">
-                <div id="contact-form-container">
-                    <form id="contactForm" class="contact-form" data-sitehub-form="true" data-form-type="quote">
-                        <!-- Hidden fields for form identification -->
-                        <input type="hidden" name="site_slug" value="buykit-fixed">
-                        <input type="hidden" name="form_type" value="quote">
-                        <input type="hidden" name="honeypot" value="" style="display: none;">
-                        
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Your full name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="your.email@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" name="phone" placeholder="Your phone number (optional)">
-                        </div>
-                        <div class="form-group">
-                            <select name="service_type" required>
-                                <option value="">Select service type</option>
-                                <option value="Brake Repair">Brake Repair</option>
-                                <option value="Gear Adjustment">Gear Adjustment</option>
-                                <option value="Tire Replacement">Tire Replacement</option>
-                                <option value="Chain Repair">Chain Repair</option>
-                                <option value="Full Service">Full Service & Tune-up</option>
-                                <option value="Wheel Repair">Wheel Repair</option>
-                                <option value="Suspension Service">Suspension Service</option>
-                                <option value="Other">Other - Please specify in message</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="subject" placeholder="Brief description of the issue" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Tell us about your bike and what issues you're experiencing. Include bike type, symptoms, and any other relevant details..." rows="5" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <select name="budget_range">
-                                <option value="">Expected budget range (optional)</option>
-                                <option value="Under R200">Under R200</option>
-                                <option value="R200 - R500">R200 - R500</option>
-                                <option value="R500 - R1000">R500 - R1000</option>
-                                <option value="R1000+">R1000+</option>
-                                <option value="Not sure">Not sure - please advise</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="submitBtn">
-                            <span class="btn-text">Get Free Quote</span>
-                            <span class="btn-loading" style="display: none;">Sending...</span>
-                        </button>
-                    </form>
-                    
-                    <!-- Success Message -->
-                    <div id="successMessage" style="display: none; background: #d4edda; color: #155724; padding: 20px; border-radius: 5px; margin-top: 20px; border-left: 4px solid #28a745;">
-                        <h3 style="margin: 0 0 10px 0;">✅ Quote Request Sent!</h3>
-                        <p style="margin: 0;">Thank you for your quote request! We'll prepare a detailed estimate and get back to you within 24 hours.</p>
-                    </div>
-                    
-                    <!-- Error Message -->
-                    <div id="errorMessage" style="display: none; background: #f8d7da; color: #721c24; padding: 20px; border-radius: 5px; margin-top: 20px; border-left: 4px solid #dc3545;">
-                        <h3 style="margin: 0 0 10px 0;">❌ Oops! Something went wrong</h3>
-                        <p style="margin: 0;" id="errorText">Please try again or contact us directly at hi@buyit.co.za</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer style="background-color: #343a40; padding: 30px 0;">
-        <div class="container">
-            <p>© 2025 Buy It. All rights reserved.</p>
-            <p>Created by SiteHub</p>
-            
-            <div class="footer-links">
-                <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
-            </div>
-            
-            <div class="social-links">
-                <a href="https://instagram.com/buykitfixed" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
-
-<script>
-function toggleNav() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-}
-
-// Automated Contact Form Handler
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const btnText = submitBtn.querySelector('.btn-text');
-    const btnLoading = submitBtn.querySelector('.btn-loading');
-    const successMessage = document.getElementById('successMessage');
-    const errorMessage = document.getElementById('errorMessage');
-    const errorText = document.getElementById('errorText');
-
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        // Show loading state
-        submitBtn.disabled = true;
-        btnText.style.display = 'none';
-        btnLoading.style.display = 'inline';
-        
-        // Hide previous messages
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none';
-
-        try {
-            // Collect form data
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-
-            // Send to our API
-            const response = await fetch(form.action, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            });
-
-            const result = await response.json();
-
-            if (response.ok && result.success) {
-                // Show success message
-                successMessage.style.display = 'block';
-                
-                // Reset form
-                form.reset();
-                
-                // Scroll to success message
-                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-                // Track conversion (optional analytics)
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'form_submit', {
-                        event_category: 'Contact',
-                        event_label: 'Quote Request'
-                    });
-                }
-            } else {
-                throw new Error(result.message || 'Failed to send message');
-            }
-        } catch (error) {
-            console.error('Form submission error:', error);
-            
-            // Show error message
-            errorText.textContent = error.message || 'Please try again or contact us directly at hi@buyit.co.za';
-            errorMessage.style.display = 'block';
-            
-            // Scroll to error message
-            errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } finally {
-            // Reset button state
-            submitBtn.disabled = false;
-            btnText.style.display = 'inline';
-            btnLoading.style.display = 'none';
-        }
-    });
-
-    // Form validation enhancements
-    const inputs = form.querySelectorAll('input, textarea, select');
-    inputs.forEach(input => {
-        input.addEventListener('blur', function() {
-            validateField(this);
-        });
-    });
-
-    function validateField(field) {
-        const value = field.value.trim();
-        
-        // Remove previous error styling
-        field.style.borderColor = '';
-        
-        if (field.hasAttribute('required') && !value) {
-            field.style.borderColor = '#dc3545';
-            return false;
-        }
-        
-        // Email validation
-        if (field.type === 'email' && value) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(value)) {
-                field.style.borderColor = '#dc3545';
-                return false;
-            }
-        }
-        
-        // Phone validation (if provided)
-        if (field.name === 'phone' && value) {
-            const phoneRegex = /^[+]?[\d\s\-\(\)]{10,}$/;
-            if (!phoneRegex.test(value)) {
-                field.style.borderColor = '#dc3545';
-                return false;
-            }
-        }
-        
-        field.style.borderColor = '#28a745';
-        return true;
-    }
-});
-</script>
-
-<!-- SiteHub Contact Form Handler -->
-<script src="http://localhost:4500/js/sitehub-forms.js"></script>
-<script>
-    // The SiteHub forms script will automatically handle form submissions
-    console.log('SiteHub contact forms initialized for buyit');
-</script>
+        <p style="text-align: center; margin-top: 40px; opacity: 0.7;">
+            Deployed automatically via SiteHub → GitHub → GitHub Pages
+        </p>
+    </div>
 </body>
 </html>
