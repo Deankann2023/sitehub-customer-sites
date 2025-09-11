@@ -3,136 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy It</title>
-    <meta name="description" content="Buy It - Your trusted partner for professional bicycle repair services. Located in Glenhazel.">
-    <meta name="keywords" content="Buy It, bicycle repair, Glenhazel, bike service, bike maintenance, bike shop">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buyk It Fixed</title>
+    <meta name="description" content="Buyk It Fixed - Your trusted partner for professional bicycle repair services. Located in Glenhazel.">
+    <meta name="keywords" content="Buyk It Fixed, bicycle repair, Glenhazel, bike service, bike maintenance, bike shop">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Buyk It Fixed">
+    <meta property="og:description" content="Buyk It Fixed - Your trusted partner for professional bicycle repair services. Located in Glenhazel.">
+    <meta property="og:url" content="https://sitehub.co.za/BuykItFixed">
+    <meta property="og:image" content="https://sitehub.co.za/BuykItFixed/hero-800x400.png"> <!-- Ensure this path is correct for live site -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Favicon (placeholder) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/02a24273c1.js" crossorigin="anonymous"></script> <!-- Font Awesome kit (kept as fallback) -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo-link">
-                <img src="/sites/BuykItFixed/logo.png" alt="Buy It Now" class="logo">
-            </a>
-            <ul class="nav-links">
-                
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="hamburger" onclick="toggleNav()">☰</button>
-        </div>
-    </nav>
-
-    <section id="hero" class="hero-section" style="background-image: url('hero-dalle-1757428018607.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-color: #1a1a1a; padding: 80px 20px; text-align: center;">
-        <div class="hero-content container">
-            <h1>Buy It</h1>
-            <p>Your trusted partner for professional bicycle repair services.</p>
-            <a href="#contact-form" class="btn btn-primary">Get a Repair Quote</a>
-        </div>
-    </section>
-
-    <section class="text-section" style="background-color: transparent; padding: 60px 20px;">
-        <div class="container">
-            <h2>We are the experts</h2>
-            <div class="text-content">
-                <p>Our ExpertiseAt our bike repair shop, we pride ourselves on providing top-notch service to all bike owners. As avid cyclists ourselves, we understand what you need and expect when it comes to maintaining and repairing your two-wheeled companions.</p>
-                <p>We bring to you a deep understanding of the mechanics of various types of bikes, from road racers to mountain climbers. With us, your bike is in safe hands.</p>
-                <p>It's simple: we love bikes as much as you do. We handle each bike with the care and attention it deserves. Our team is skilled, experienced, and dedicated to ensuring your bike is in the best condition possible.</p>
-                <p>We are committed to providing you with a service that's not just good but great. Here's what we guarantee:</p>
-                <p>Ready for a bike repair service like no other? Give us a call today!</p>
+    <!-- Header and Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#hero" class="logo-link">
+                    <img src="logo.png" alt="Buyk It Fixed Logo" class="logo">
+                </a>
+                <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navMenu">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact-form">Form</a></li>
+                </ul>
             </div>
-        </div>
-    </section>
+        </nav>
+    </header>
 
-    <section id="services" class="services-section" style="background-color: #f8fafc; padding: 60px 20px;">
-        <div class="container">
-            <h2>Our Services</h2>
-            <p class="section-description">We offer a comprehensive range of bicycle repair and maintenance services to meet all your needs, ensuring your ride is always at its best.</p>
-            <div class="service-grid">
-                
-                <div class="service-item">
-                    <div class="service-icon">⭐</div>
-                    <h3>Service</h3>
-                    <p></p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">⭐</div>
-                    <h3>Service</h3>
-                    <p></p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">⭐</div>
-                    <h3>Service</h3>
-                    <p></p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">⭐</div>
-                    <h3>Service</h3>
-                    <p></p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">⭐</div>
-                    <h3>Service</h3>
-                    <p></p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">⭐</div>
-                    <h3>Service</h3>
-                    <p></p>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1>Buyk It Fixed</h1>
+                <p>Your trusted partner for professional bicycle repair services.</p>
+                <a href="#contact-form" class="btn btn-primary">Get a Repair Quote</a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        
+        
+        
+        
+        <section id="about" class="section container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <p>Buyk It Fixed is dedicated to providing top-notch bicycle repair services. Our mission is to keep you riding safely and smoothly, with expert care and efficient solutions.</p>
+                <p>With 15 years of experience in Services, we pride ourselves on agile methodologies and a client-first approach. Your cycling success is our passion. We believe in transparency, quality craftsmanship, and building lasting relationships with our cycling community.</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section section-padding section-alt-bg">
+            <div class="container">
+                <h2>Our Services</h2>
+                <p class="section-description">We offer a comprehensive range of bicycle repair and maintenance services to meet all your needs, ensuring your ride is always at its best.</p>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <i class="fa-solid fa-wrench"></i>
+                        <h3>Full Tune-Ups</h3>
+                        <p>Comprehensive inspection and adjustment of all major components.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fa-solid fa-cogs"></i>
+                        <h3>Gear Servicing</h3>
+                        <p>Precise adjustments and repairs for smooth and reliable shifting.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fa-solid fa-bicycle"></i>
+                        <h3>Brake Adjustments</h3>
+                        <p>Ensuring optimal stopping power and safety on every ride.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fa-solid fa-tools"></i>
+                        <h3>Tire & Tube Repair</h3>
+                        <p>Puncture repairs, tire replacements, and pressure checks.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fa-solid fa-circle"></i>
+                        <h3>Wheel Truing</h3>
+                        <p>Straightening and tensioning wheels for improved performance.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fa-solid fa-link"></i>
+                        <h3>Chain & Drivetrain</h3>
+                        <p>Cleaning, lubrication, and replacement of drivetrain components.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact-section" style="background-color: #ffffff; padding: 60px 20px;">
-        <div class="container">
-            <h2>Get a Repair Quote or Ask a Question</h2>
-            <div class="contact-form">
-                <form action="/api/contact" method="POST">
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>We're here to help keep your bike in top condition. Reach out to us!</p>
+                <div class="contact-details">
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Glenhazel</p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:ashersacks06@gmail.com">ashersacks06@gmail.com</a></p>
+                    <p><i class="fab fa-instagram"></i> <strong>Instagram:</strong> <a href="https://instagram.com/buykitfixed" target="_blank" rel="noopener noreferrer">@buykitfixed</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact-form" class="contact-form-section section-padding section-alt-bg">
+            <div class="container">
+                <h2>Get a Repair Quote or Ask a Question</h2>
+                <form action="mailto:ashersacks06@gmail.com" method="post" enctype="text/plain" class="contact-form">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Your full name" required>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="Name" required aria-label="Your Name">
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="your.email@example.com" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="Email" required aria-label="Your Email Address">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="subject" placeholder="What type of service do you need?" required>
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="Subject" required aria-label="Subject of your message">
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Tell us about your bike and what issues you're experiencing..." rows="5" required></textarea>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="Message" rows="6" required aria-label="Your Message"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer style="background-color: #343a40; padding: 30px 0;">
+    <!-- Footer -->
+    <footer>
         <div class="container">
-            <p>© 2025 Buyk It Fixed. All rights reserved.</p>
-            <p>Created by SiteHub</p>
-            
-            <div class="footer-links">
-                <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
-            </div>
-            
-            <div class="social-links">
-                <a href="https://instagram.com/buykitfixed" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
+            <p>&copy; <span id="current-year"></span> Buyk It Fixed. All rights reserved.</p>
+            <p>Created by <a href="https://www.sitehub.co.za" target="_blank" rel="noopener noreferrer">SiteHub</a></p>
         </div>
     </footer>
 
-<script>
-function toggleNav() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-}
-</script>
+    <!-- JavaScript for current year and mobile nav toggle -->
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile navigation toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links li a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', false);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
