@@ -12,7 +12,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo-link">
-                <img src="/api/customer-sites/buyit/generated-logos/logo-premium-2025-09-13T08-56-43-010Z.png" alt="Buy It" class="logo">
+                <img src="/api/customer-sites/buyit/generated-logos/logo-premium-2025-09-12T14-31-07-832Z.png" alt="Buy It" class="logo">
                 
             </a>
             <ul class="nav-links">
@@ -22,7 +22,7 @@
         </div>
     </nav>
 
-    <section id="hero" class="hero-section" style="background-image: url('/api/customer-sites/buyit/service-gear-servicing-1757713187920.png'); background-size: cover; background-position: center; background-color: #1a1a1a; padding: 80px 20px; text-align: center;">
+    <section id="hero" class="hero-section" style="background-image: url('/api/customer-sites/buyit/hero-dalle-1757663782052.png'); background-size: cover; background-position: center; background-color: #1a1a1a; padding: 80px 20px; text-align: center;">
         <div class="overlay"></div>
         <div class="hero-content container">
             <h1 class="hero-title">Buy It</h1>
@@ -43,7 +43,7 @@
     </div>
   
     <div class="service-item">
-        <i class="/api/customer-sites/buyit/service-gear-servicing-1757713187920.png service-icon" aria-hidden="true"></i>
+        <i class="⚙️ service-icon" aria-hidden="true"></i>
         <h3>Gear Servicing</h3>
         <p><p>Precise adjustments and repairs for smooth and reliable shifting.</p></p>
     </div>

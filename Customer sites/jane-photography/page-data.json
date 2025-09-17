@@ -1,0 +1,339 @@
+{
+  "title": "Jane Photography",
+  "widgets": [
+    {
+      "id": "nav-1757680297839",
+      "type": "navigation",
+      "content": {
+        "logo": "/api/customer-sites/jane-photography/generated-logos/logo-premium-2025-09-12T14-16-24-999Z.png",
+        "logoWidth": "120px",
+        "logoHeight": "40px",
+        "title": "Jane Photography",
+        "titleBold": false,
+        "hideSiteTitle": true,
+        "links": [
+          {
+            "text": "Services",
+            "href": "#services"
+          },
+          {
+            "text": "Contact",
+            "href": "#contact"
+          }
+        ],
+        "sticky": true
+      },
+      "settings": {
+        "spacing": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "backgroundColor": "#ffffff",
+        "borderRadius": 0,
+        "shadow": "0 2px 10px rgba(0, 0, 0, 0.1)",
+        "animation": "none",
+        "visibility": {
+          "mobile": true,
+          "tablet": true,
+          "desktop": true
+        }
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "width": "100%",
+        "height": "70px"
+      },
+      "responsive": {
+        "desktop": {
+          "visible": true,
+          "width": 100,
+          "settings": {}
+        },
+        "tablet": {
+          "visible": true,
+          "width": 100,
+          "settings": {}
+        },
+        "mobile": {
+          "visible": true,
+          "width": 100,
+          "settings": {}
+        }
+      }
+    },
+    {
+      "id": "hero-1757680297839",
+      "type": "hero-section",
+      "content": {
+        "title": "Capturing Life's Beautiful Moments",
+        "subtitle": "Professional photography services for all your special occasions",
+        "buttonText": "Get Started",
+        "buttonLink": "#contact",
+        "backgroundImage": "hero-dalle-1758023468202.png",
+        "alignment": "center"
+      },
+      "settings": {
+        "spacing": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "backgroundColor": "#1a1a1a",
+        "borderRadius": 0,
+        "shadow": "none",
+        "animation": "none",
+        "visibility": {
+          "mobile": true,
+          "tablet": true,
+          "desktop": true
+        }
+      },
+      "position": {
+        "x": 0,
+        "y": 70,
+        "width": "100%",
+        "height": "100vh"
+      },
+      "responsive": {
+        "desktop": {
+          "visible": true,
+          "width": 100,
+          "settings": {}
+        },
+        "tablet": {
+          "visible": true,
+          "width": 100,
+          "settings": {}
+        },
+        "mobile": {
+          "visible": true,
+          "width": 100,
+          "settings": {}
+        }
+      }
+    },
+    {
+      "id": "services-1757680297839",
+      "type": "services-grid",
+      "content": {
+        "title": "Our Services",
+        "subtitle": "Our comprehensive services are designed to meet all your needs with professional excellence and attention to detail.",
+        "services": [
+          {
+            "title": "Architectural Photography",
+            "description": "Capturing the grandeur and structural integrity of buildings, from majestic exteriors to intricate details, highlighting their design and presence.",
+            "icon": "/api/customer-sites/jane-photography/service-architectural-photography-1757617941969.png",
+            "iconType": "image"
+          },
+          {
+            "title": "Portrait Photography",
+            "description": "Professional portrait sessions that capture your personality and essence in stunning detail.",
+            "icon": "/api/customer-sites/jane-photography/service-service-1757618211290.png",
+            "iconType": "image"
+          }
+        ]
+      },
+      "settings": {
+        "spacing": {
+          "top": 60,
+          "bottom": 60,
+          "left": 20,
+          "right": 20
+        },
+        "backgroundColor": "#f8fafc",
+        "borderRadius": 0,
+        "shadow": "none",
+        "animation": "none",
+        "visibility": {
+          "mobile": true,
+          "tablet": true,
+          "desktop": true
+        }
+      },
+      "position": {
+        "x": 0,
+        "y": 900,
+        "width": "100%",
+        "height": "auto"
+      },
+      "responsive": {
+        "desktop": {
+          "visible": true,
+          "width": 100,
+          "settings": {}
+        },
+        "tablet": {
+          "visible": true,
+          "width": 100,
+          "settings": {}
+        },
+        "mobile": {
+          "visible": true,
+          "width": 100,
+          "settings": {}
+        }
+      }
+    },
+    {
+      "id": "contact-form-1757680297839",
+      "type": "contact-form",
+      "content": {
+        "title": "Get In Touch",
+        "subtitle": "Ready to connect? Fill out the form below and we'll get back to you.",
+        "fields": [
+          {
+            "type": "text",
+            "name": "name",
+            "label": "Name",
+            "placeholder": "Your full name",
+            "required": true
+          },
+          {
+            "type": "email",
+            "name": "email",
+            "label": "Email",
+            "placeholder": "your.email@example.com",
+            "required": true
+          },
+          {
+            "type": "text",
+            "name": "subject",
+            "label": "Subject",
+            "placeholder": "What can we help you with?",
+            "required": true
+          },
+          {
+            "type": "textarea",
+            "name": "message",
+            "label": "Message",
+            "placeholder": "Tell us more about your inquiry...",
+            "required": true,
+            "rows": 5
+          }
+        ],
+        "submitText": "Send Message",
+        "successMessage": "Thank you for your message! We'll get back to you within 24 hours.",
+        "action": "/api/contact",
+        "method": "POST"
+      },
+      "settings": {
+        "spacing": {
+          "top": 60,
+          "bottom": 60,
+          "left": 20,
+          "right": 20
+        },
+        "backgroundColor": "#ffffff",
+        "borderRadius": 8,
+        "shadow": "0 5px 15px rgba(0,0,0,0.08)",
+        "animation": "none",
+        "visibility": {
+          "mobile": true,
+          "tablet": true,
+          "desktop": true
+        }
+      },
+      "position": {
+        "x": 0,
+        "y": 1300,
+        "width": "100%",
+        "height": "auto"
+      },
+      "responsive": {
+        "desktop": {
+          "visible": true,
+          "width": 100,
+          "settings": {}
+        },
+        "tablet": {
+          "visible": true,
+          "width": 100,
+          "settings": {}
+        },
+        "mobile": {
+          "visible": true,
+          "width": 100,
+          "settings": {}
+        }
+      }
+    },
+    {
+      "id": "footer-1757680297839",
+      "type": "footer",
+      "content": {
+        "text": "© 2025 Jane Photography. All rights reserved.",
+        "subText": "Created by SiteHub",
+        "links": [
+          {
+            "text": "Privacy Policy",
+            "href": "/privacy"
+          },
+          {
+            "text": "Terms of Service",
+            "href": "/terms"
+          }
+        ],
+        "socialLinks": []
+      },
+      "settings": {
+        "spacing": {
+          "top": 30,
+          "bottom": 30,
+          "left": 0,
+          "right": 0
+        },
+        "backgroundColor": "#343a40",
+        "borderRadius": 0,
+        "shadow": "none",
+        "animation": "none",
+        "visibility": {
+          "mobile": true,
+          "tablet": true,
+          "desktop": true
+        }
+      },
+      "position": {
+        "x": 0,
+        "y": 1800,
+        "width": "100%",
+        "height": "auto"
+      },
+      "responsive": {
+        "desktop": {
+          "visible": true,
+          "width": 100,
+          "settings": {}
+        },
+        "tablet": {
+          "visible": true,
+          "width": 100,
+          "settings": {}
+        },
+        "mobile": {
+          "visible": true,
+          "width": 100,
+          "settings": {}
+        }
+      }
+    }
+  ],
+  "settings": {
+    "seo": {
+      "title": "Jane Photography",
+      "description": "",
+      "keywords": ""
+    },
+    "layout": {
+      "maxWidth": "1200px",
+      "padding": "20px",
+      "backgroundColor": "#ffffff",
+      "containerType": "boxed"
+    }
+  },
+  "lastModified": "2025-09-16T11:52:09.015Z",
+  "version": "2.0"
+}

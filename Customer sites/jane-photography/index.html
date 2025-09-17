@@ -4,61 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jane Photography</title>
-    <meta name="description" content="Professional photography specialising in architecture and interior photography">
-    
+    <meta name="description" content="Jane Photography">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo-link">
+                <img src="/api/customer-sites/jane-photography/generated-logos/logo-premium-2025-09-12T14-16-24-999Z.png" alt="Jane Photography" class="logo">
+                
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li><li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" onclick="toggleNav()">☰</button>
+        </div>
+    </nav>
 
-    <section id="hero" class="hero-section" style="background-image: url('hero-dalle-1757606836602.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-color: #1e3a8a; padding: 80px 20px; text-align: center;">
+    <section id="hero" class="hero-section" style="background-image: url('hero-dalle-1758023468202.png'); background-size: cover; background-position: center; background-color: #1a1a1a; padding: 80px 20px; text-align: center;">
+        <div class="overlay"></div>
         <div class="hero-content container">
-            <h1>Jane Photography</h1>
-            <p>Expert Architectural & Interior Photography</p>
-            <a href="#contact-form" class="btn btn-primary">Get in Touch</a>
+            <h1 class="hero-title">Capturing Life's Beautiful Moments</h1>
+            <p class="hero-tagline">Professional photography services for all your special occasions</p>
+            <a href="#contact" class="btn btn-secondary">Get Started</a>
         </div>
     </section>
 
-    <section id="services" class="services-section" style="background-color: #f8fafc; padding: 60px 20px;">
-        <div class="container">
-            <h2>Our Services</h2>
-            <p class="section-description">We offer a comprehensive range of bicycle repair and maintenance services to meet all your needs, ensuring your ride is always at its best.</p>
-            <div class="service-grid">
-                
-                <div class="service-item">
-                    <i class="/sites/jane-photography/hero-dalle-1757598744685.png"></i>
-                    <h3>Architectural Photography</h3>
-                    <p><p>Capturing the grandeur and structural integrity of buildings, from majestic exteriors to intricate details, highlighting their design and presence.</p></p>
-                </div>
-                
-                <div class="service-item">
-                    <i class="/images/aboutus.jpg"></i>
-                    <h3>Interior Photography</h3>
-                    <p><p>Showcasing the aesthetics and atmosphere of interior spaces, emphasizing lighting, design elements, and the overall feel of a room or property.</p></p>
-                </div>
-            </div>
+    <section id="services" class="section bg-light container">
+        <h2 class="section-title">Our Services</h2>
+        
+        <div class="services-grid">
+            
+    <div class="service-item">
+        <i class="/api/customer-sites/jane-photography/service-architectural-photography-1757617941969.png service-icon" aria-hidden="true"></i>
+        <h3>Architectural Photography</h3>
+        <p>Capturing the grandeur and structural integrity of buildings, from majestic exteriors to intricate details, highlighting their design and presence.</p>
+    </div>
+  
+    <div class="service-item">
+        <i class="/api/customer-sites/jane-photography/service-service-1757618211290.png service-icon" aria-hidden="true"></i>
+        <h3>Portrait Photography</h3>
+        <p>Professional portrait sessions that capture your personality and essence in stunning detail.</p>
+    </div>
+  
         </div>
     </section>
 
     <footer style="background-color: #343a40; padding: 30px 0;">
         <div class="container">
-            <p>© 2025 Buyk It Fixed. All rights reserved.</p>
+            <p>© 2025 Jane Photography. All rights reserved.</p>
             <p>Created by SiteHub</p>
             
-            <div class="footer-links">
-                <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
-            </div>
             
-            <div class="social-links">
-                <a href="https://instagram.com/buykitfixed" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
         </div>
     </footer>
-
-<script>
-function toggleNav() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-}
-</script>
+    
+    <script>
+    function toggleNav() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+    </script>
 </body>
 </html>

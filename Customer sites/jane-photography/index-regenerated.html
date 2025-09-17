@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jane Photography</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo-link">
+                <img src="./logo.svg" alt="Jane Photography" class="logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li><li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" onclick="toggleNav()">☰</button>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero-section" style="background-image: url('./hero-dalle-1757606836602.png'); background-size: cover; background-position: center; padding: 80px 20px; text-align: center;">
+        <div class="hero-content container">
+            <h1>Professional Photography Services</h1>
+            <p>Capturing your most precious moments</p>
+        </div>
+    </section>
+<script>
+function toggleNav() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+</script>
+</body>
+</html>
