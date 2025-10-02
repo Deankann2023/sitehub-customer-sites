@@ -43,69 +43,125 @@
     </header>
 
     <main>
-        <section id="hero" class="hero-section" role="banner" aria-label="Hero section with company tagline">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1 class="hero-title">Wedding Planners</h1>
-                <p class="hero-tagline">Your Dream Wedding, Flawlessly Executed.</p>
-                <a href="#contact-form" class="btn btn-primary" role="button">Plan Your Dream Day</a>
-            </div>
-        </section>
+        
+      <section id="hero" class="hero-section">
+          <div class="hero-overlay"></div>
+          <div class="container hero-content">
+              <h1>Wedding Planners</h1>
+              <p>Your Dream Wedding, Flawlessly Executed.</p>
+              <a href="#contact-form" class="btn btn-primary">Plan Your Dream Day</a>
+          </div>
+      </section>
 
         
         
-        <section id="about" class="section container">
-            <h2 class="section-title">About Us</h2>
-            <div class="about-content">
-                <p>With many years of expertise in wedding planning and wedding event management, we are dedicated to crafting personalized experiences. We pride ourselves on client success, employing agile methodologies to adapt to your needs and preferences, guaranteeing a stress-free journey to your perfect wedding day.</p></div>
-        </section>
+        
+      <section id="about" class="about-section section-padding">
+          <div class="container">
+              <h2>About Us</h2>
+              <p><p>With many years of expertise in wedding planning and wedding event management, we are dedicated to crafting personalized experiences. We pride ourselves on client success, employing agile methodologies to adapt to your needs and preferences, guaranteeing a stress-free journey to your perfect wedding day.</p></p>
+          </div>
+      </section>
 
-        <section id="services" class="services-section container" aria-labelledby="services-heading">
-            <h2 id="services-heading">Our Services</h2>
-            <p class="lead-text">We offer a comprehensive suite of services designed to cover every aspect of your wedding, ensuring a flawless and memorable celebration.</p>
-            <div class="service-grid">
-                <div class="service-item" role="listitem">
-                    <i class="fas fa-ring service-icon" aria-hidden="true"></i>
-                    <h3>Full-Service Wedding Planning</h3>
-                    <p>From concept to completion, we manage all details, allowing you to relax and enjoy the journey.</p>
-                </div>
-                <div class="service-item" role="listitem">
-                    <i class="fas fa-clipboard-check service-icon" aria-hidden="true"></i>
-                    <h3>Day-Of Coordination</h3>
-                    <p>For couples who have planned everything but need professional execution on their special day.</p>
-                </div>
-                <div class="service-item" role="listitem">
-                    <i class="fas fa-palette service-icon" aria-hidden="true"></i>
-                    <h3>Event Design & Decor</h3>
-                    <p>Transforming venues into breathtaking settings that reflect your unique style and vision.</p>
-                </div>
-                <div class="service-item" role="listitem">
-                    <i class="fas fa-handshake service-icon" aria-hidden="true"></i>
-                    <h3>Vendor Management</h3>
-                    <p>Connecting you with top-tier vendors and managing all communications and contracts.</p>
-                </div>
-                <div class="service-item" role="listitem">
-                    <i class="fas fa-chart-pie service-icon" aria-hidden="true"></i>
-                    <h3>Budget Planning</h3>
-                    <p>Expert guidance to help you allocate your budget effectively without compromising on quality.</p>
-                </div>
-            </div>
-        </section>
+        
+      <section id="services" class="services-section section-padding section-alt-bg">
+          <div class="container">
+              <h2>Our Services</h2>
+              <p class="section-description">We offer professional services tailored to meet your needs.</p>
+              <div class="service-grid">
+                  
+                  <div class="service-item service-with-image">
+                      <div class="service-image">
+                          <img src="https://raw.githubusercontent.com/Deankann2023/sitehub-customer-sites/main/Customer sites/58117da8-dc5e-4d94-8068-737d1e7af530/images/ai-service-full-service-wedding-planning-1759403856141.png" alt="Full-Service Wedding Planning" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" />
+                      </div>
+                      <i class="fa-solid fa-star" style="font-size: 2rem; color: #007bff; margin-bottom: 10px;"></i>
+                      <h3>Full-Service Wedding Planning</h3>
+                      <div class="service-description"><p>From concept to completion, we manage all details, allowing you to relax and enjoy the journey.</p></div>
+                  </div>
+                  <div class="service-item">
+                      <i class="fa-solid fa-star" style="font-size: 3rem; color: #007bff; margin-bottom: 15px;"></i>
+                      <h3>Day-Of Coordination</h3>
+                      <div class="service-description">For couples who have planned everything but need professional execution on their special day.</div>
+                  </div>
+                  <div class="service-item">
+                      <i class="fa-solid fa-star" style="font-size: 3rem; color: #007bff; margin-bottom: 15px;"></i>
+                      <h3>Event Design & Decor</h3>
+                      <div class="service-description">Transforming venues into breathtaking settings that reflect your unique style and vision.</div>
+                  </div>
+                  <div class="service-item">
+                      <i class="fa-solid fa-star" style="font-size: 3rem; color: #007bff; margin-bottom: 15px;"></i>
+                      <h3>Vendor Management</h3>
+                      <div class="service-description">Connecting you with top-tier vendors and managing all communications and contracts.</div>
+                  </div>
+                  <div class="service-item">
+                      <i class="fa-solid fa-star" style="font-size: 3rem; color: #007bff; margin-bottom: 15px;"></i>
+                      <h3>Budget Planning</h3>
+                      <div class="service-description">Expert guidance to help you allocate your budget effectively without compromising on quality.</div>
+                  </div>
+              </div>
+          </div>
+          <style>
+              .service-item {
+                  text-align: center;
+                  padding: 30px 20px;
+                  background: white;
+                  border-radius: 10px;
+                  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                  transition: transform 0.3s ease;
+                  margin-bottom: 30px;
+              }
+              .service-item:hover {
+                  transform: translateY(-5px);
+              }
+              .service-with-image {
+                  position: relative;
+              }
+              .service-image {
+                  width: 100%;
+                  margin-bottom: 15px;
+                  overflow: hidden;
+                  border-radius: 8px;
+              }
+              .service-image img {
+                  width: 100%;
+                  height: 200px;
+                  object-fit: cover;
+                  border-radius: 8px;
+                  transition: transform 0.3s ease;
+              }
+              .service-item:hover .service-image img {
+                  transform: scale(1.05);
+              }
+              .service-grid {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                  gap: 30px;
+                  margin-top: 50px;
+              }
+              @media (max-width: 768px) {
+                  .service-grid {
+                      grid-template-columns: 1fr;
+                      gap: 20px;
+                  }
+                  .service-image img {
+                      height: 150px;
+                  }
+              }
+          </style>
+      </section>
 
-        <section id="contact" class="contact-section container" aria-labelledby="contact-heading">
-            <h2 id="contact-heading">Get In Touch</h2>
-            <p class="lead-text">Ready to start planning your dream wedding? Contact us today to discuss your vision.</p>
-            <div class="contact-info">
-                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 5 Marigold Street</p>
-                <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@weddingplanners.com">info@weddingplanners.com</a></p>
-                <p><i class="fas fa-phone" aria-hidden="true"></i> 0724354591</p>
-                <div class="social-media">
-                    <a href="https://instagram.com/weddingPlanner" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
-                        <i class="fab fa-instagram" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
+        
+      <section id="contact" class="contact-section section-padding">
+          <div class="container">
+              <h2>Contact Us</h2>
+              <p>We're here to help. Reach out to us!</p>
+              <div class="contact-details">
+                  
+                  <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@weddingplanners.com">info@weddingplanners.com</a></p>
+                  <p><i class="fab fa-instagram"></i> <strong>Instagram:</strong> <a href="https://instagram.com/weddingPlanner" target="_blank" rel="noopener noreferrer">@weddingPlanner</a></p>
+              </div>
+          </div>
+      </section>
 
         <section id="contact-form" class="contact-form-section container" aria-labelledby="form-heading">
             <h2 id="form-heading">Send Us A Message</h2>
