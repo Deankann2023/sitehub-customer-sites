@@ -23,6 +23,7 @@
     </nav>
 
     
+      
       <section id="hero" class="hero-section">
           <div class="hero-overlay"></div>
           <div class="container hero-content">
@@ -33,6 +34,7 @@
       </section>
 
     
+      
       <section id="services" class="services-section section-padding section-alt-bg">
           <div class="container">
               <h2>Our Services</h2>
@@ -40,40 +42,85 @@
               <div class="service-grid">
                   
                   <div class="service-item">
-                      <div class="service-image">
-                          <img src="https://raw.githubusercontent.com/Deankann2023/sitehub-customer-sites/main/Customer sites/8471936c-3bb6-48d4-81e1-3791fc089938/images/ai-service-full-tune-ups-1759403340052.png" alt="Full Tune-Ups" />
-                      </div>
-                      <i class="fa-solid fa-star"></i>
-                      <h3>Full Tune-Ups</h3>
-                      <div class="service-description"><p>Comprehensive inspection and adjustment of all major components.</p></div>
+                      <i class="fa-solid fa-star" style="font-size: 3rem; color: #007bff; margin-bottom: 15px;"></i>
+                      <h3>Service</h3>
+                      <div class="service-description"><p>Service description</p></div>
                   </div>
                   <div class="service-item">
-                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star" style="font-size: 3rem; color: #007bff; margin-bottom: 15px;"></i>
                       <h3>Gear Servicing</h3>
                       <div class="service-description"><p>Precise adjustments and repairs for smooth and reliable shifting.</div>
                   </div>
                   <div class="service-item">
-                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star" style="font-size: 3rem; color: #007bff; margin-bottom: 15px;"></i>
                       <h3>Brake Adjustments</h3>
                       <div class="service-description"><p>Ensuring optimal stopping power and safety on every ride.</div>
                   </div>
                   <div class="service-item">
-                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star" style="font-size: 3rem; color: #007bff; margin-bottom: 15px;"></i>
                       <h3>Tire & Tube Repair</h3>
                       <div class="service-description"><p>Puncture repairs, tire replacements, and pressure checks.</div>
                   </div>
                   <div class="service-item">
-                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star" style="font-size: 3rem; color: #007bff; margin-bottom: 15px;"></i>
                       <h3>Wheel Truing</h3>
                       <div class="service-description"><p>Straightening and tensioning wheels for improved performance.</div>
                   </div>
                   <div class="service-item">
-                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star" style="font-size: 3rem; color: #007bff; margin-bottom: 15px;"></i>
                       <h3>Chain & Drivetrain</h3>
                       <div class="service-description"><p>Cleaning, lubrication, and replacement of drivetrain components.</div>
                   </div>
               </div>
           </div>
+          <style>
+              .service-item {
+                  text-align: center;
+                  padding: 30px 20px;
+                  background: white;
+                  border-radius: 10px;
+                  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                  transition: transform 0.3s ease;
+                  margin-bottom: 30px;
+              }
+              .service-item:hover {
+                  transform: translateY(-5px);
+              }
+              .service-with-image {
+                  position: relative;
+              }
+              .service-image {
+                  width: 100%;
+                  margin-bottom: 15px;
+                  overflow: hidden;
+                  border-radius: 8px;
+              }
+              .service-image img {
+                  width: 100%;
+                  height: 200px;
+                  object-fit: cover;
+                  border-radius: 8px;
+                  transition: transform 0.3s ease;
+              }
+              .service-item:hover .service-image img {
+                  transform: scale(1.05);
+              }
+              .service-grid {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                  gap: 30px;
+                  margin-top: 50px;
+              }
+              @media (max-width: 768px) {
+                  .service-grid {
+                      grid-template-columns: 1fr;
+                      gap: 20px;
+                  }
+                  .service-image img {
+                      height: 150px;
+                  }
+              }
+          </style>
       </section>
 
     <footer style="background-color: #343a40; padding: 30px 0;">
