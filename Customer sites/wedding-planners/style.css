@@ -579,3 +579,101 @@ textarea {
         font-size: 2rem;
     }
 }
+
+
+/* === CUSTOM STYLING START === */
+:root {
+  --primary-color: #2563eb;
+  --accent-color: #dc2626;
+  --background-color: #ffffff;
+}
+
+body {
+  background-color: var(--background-color);
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+}
+
+.btn, button[type="submit"], .cta-button, .button {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn:hover, button[type="submit"]:hover, .cta-button:hover, .button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header, .navbar, .nav {
+  background-color: var(--primary-color);
+}
+
+.link, a:not(.btn):not(.button) {
+  color: var(--primary-color);
+}
+
+.link:hover, a:not(.btn):not(.button):hover {
+  color: var(--accent-color);
+}
+
+.icon, .service-icon, .feature-icon {
+  color: var(--primary-color);
+}
+
+.border-primary {
+  border-color: var(--primary-color);
+}
+
+.highlight, .accent, .accent-text {
+  color: var(--accent-color);
+}
+
+.badge, .tag, .label {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.border-accent {
+  border-color: var(--accent-color);
+}
+
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .container, .main-content {
+    padding: 0 16px;
+  }
+  
+  section, .section {
+    padding: calc(var(--section-spacing) * 0.6) 0;
+  }
+  
+  .btn, button, .button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .logo, .site-logo {
+    max-height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container, .main-content {
+    padding: 0 12px;
+  }
+  
+  .card, .service-card {
+    margin-bottom: 16px;
+  }
+}
+
+/* === CUSTOM STYLING END === */
