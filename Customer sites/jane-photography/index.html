@@ -22,34 +22,84 @@
         </div>
     </nav>
 
-    <section id="hero" class="hero-section" style="background-image: url('hero-dalle-1758023468202.png'); background-size: cover; background-position: center; background-color: #1a1a1a; padding: 80px 20px; text-align: center;">
-        <div class="overlay"></div>
-        <div class="hero-content container">
-            <h1 class="hero-title">Capturing Life's Beautiful Moments</h1>
-            <p class="hero-tagline">Professional photography services for all your special occasions</p>
-            <a href="#contact" class="btn btn-secondary">Get Started</a>
-        </div>
-    </section>
+    
+      <section id="hero" class="hero-section">
+          <div class="hero-overlay"></div>
+          <div class="container hero-content">
+              <h1>Capturing Life's Beautiful Moments</h1>
+              <p>Professional photography services for all your special occasions</p>
+              <a href="#contact" class="btn btn-primary">Get Started</a>
+          </div>
+      </section>
 
-    <section id="services" class="section bg-light container">
-        <h2 class="section-title">Our Services</h2>
-        
-        <div class="services-grid">
-            
-    <div class="service-item">
-        <i class="/api/customer-sites/jane-photography/service-architectural-photography-1757617941969.png service-icon" aria-hidden="true"></i>
-        <h3>Architectural Photography</h3>
-        <p>Capturing the grandeur and structural integrity of buildings, from majestic exteriors to intricate details, highlighting their design and presence.</p>
-    </div>
-  
-    <div class="service-item">
-        <i class="/api/customer-sites/jane-photography/service-service-1757618211290.png service-icon" aria-hidden="true"></i>
-        <h3>Portrait Photography</h3>
-        <p>Professional portrait sessions that capture your personality and essence in stunning detail.</p>
-    </div>
-  
-        </div>
-    </section>
+    
+      <section id="services" class="services-section section-padding section-alt-bg">
+          <div class="container">
+              <h2>Our Services</h2>
+              <p class="section-description">We offer professional services tailored to meet your needs.</p>
+              <div class="service-grid">
+                  
+                  <div class="service-item">
+                      <i class="fa-solid fa-apple-alt" style="font-size: 3rem; color: #007bff; margin-bottom: 15px;"></i>
+                      <h3>Architectural Photography</h3>
+                      <div class="service-description"><p>Capturing the grandeur and structural integrity of buildings, from majestic exteriors to intricate details, highlighting their design and presence.</p></div>
+                  </div>
+                  <div class="service-item">
+                      <i class="fa-solid fa-star" style="font-size: 3rem; color: #007bff; margin-bottom: 15px;"></i>
+                      <h3>Portrait Photography</h3>
+                      <div class="service-description">Professional portrait sessions that capture your personality and essence in stunning detail.</div>
+                  </div>
+              </div>
+          </div>
+          <style>
+              .service-item {
+                  text-align: center;
+                  padding: 30px 20px;
+                  background: white;
+                  border-radius: 10px;
+                  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                  transition: transform 0.3s ease;
+                  margin-bottom: 30px;
+              }
+              .service-item:hover {
+                  transform: translateY(-5px);
+              }
+              .service-with-image {
+                  position: relative;
+              }
+              .service-image {
+                  width: 100%;
+                  margin-bottom: 15px;
+                  overflow: hidden;
+                  border-radius: 8px;
+              }
+              .service-image img {
+                  width: 100%;
+                  height: 200px;
+                  object-fit: cover;
+                  border-radius: 8px;
+                  transition: transform 0.3s ease;
+              }
+              .service-item:hover .service-image img {
+                  transform: scale(1.05);
+              }
+              .service-grid {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                  gap: 30px;
+                  margin-top: 50px;
+              }
+              @media (max-width: 768px) {
+                  .service-grid {
+                      grid-template-columns: 1fr;
+                      gap: 20px;
+                  }
+                  .service-image img {
+                      height: 150px;
+                  }
+              }
+          </style>
+      </section>
 
     <footer style="background-color: #343a40; padding: 30px 0;">
         <div class="container">
