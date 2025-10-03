@@ -581,23 +581,30 @@ textarea {
 }
 
 
+
+
 /* === CUSTOM STYLING START === */
 :root {
-  --primary-color: #2563eb;
-  --accent-color: #dc2626;
-  --background-color: #ffffff;
+  --primary-color: #8b5cf6;
+  --accent-color: #f59e0b;
+  --background-color: #f8fafc;
 }
 
 body {
+  font-family: Inter;
   background-color: var(--background-color);
-  font-size: 16px;
+  font-size: 18px;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: Poppins;
   color: var(--primary-color);
 }
 
 .btn, button[type="submit"], .cta-button, .button {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  border: none;
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -606,6 +613,11 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.9;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo, .site-logo {
+  max-height: 160px;
+  width: auto;
 }
 
 .header, .navbar, .nav {
